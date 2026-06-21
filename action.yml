@@ -1,0 +1,26 @@
+name: 'Conlenz Audit Scan'
+description: 'Deep scans your repository for sensitive data, secrets, and low quality images.'
+author: 'Abhinay9763'
+branding:
+  icon: 'shield'
+  color: 'blue'
+
+inputs:
+  mode:
+    description: 'Scan mode (quick or deep)'
+    default: 'deep'
+    required: false
+  path:
+    description: 'Path to scan'
+    default: '.'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/abhinay9763/conlenz-action:latest'
+  env:
+    INPUT_MODE: ${{ inputs.mode }}
+    INPUT_PATH: ${{ inputs.path }}
+    RESEND_KEY: ${{ env.RESEND_KEY }}
+    RESEND_MAIL: ${{ env.RESEND_MAIL }}
+    REPORT_RECIPIENT: ${{ env.REPORT_RECIPIENT }}
