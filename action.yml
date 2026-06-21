@@ -18,9 +18,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/abhinay9763/conlenz-action:latest'
-  env:
-    INPUT_MODE: ${{ inputs.mode }}
-    INPUT_PATH: ${{ inputs.path }}
-    RESEND_KEY: ${{ env.RESEND_KEY }}
-    RESEND_MAIL: ${{ env.RESEND_MAIL }}
-    REPORT_RECIPIENT: ${{ env.REPORT_RECIPIENT }}
