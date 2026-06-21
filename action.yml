@@ -14,6 +14,9 @@ inputs:
     description: 'Path to scan'
     default: '.'
     required: false
+  token:
+    description: 'License token to unlock Paid Tier features'
+    required: false
 
 runs:
   using: 'docker'
